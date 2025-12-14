@@ -1,0 +1,283 @@
+:root {
+  --blue: #2563eb;
+  --blue-soft: rgba(37, 99, 235, 0.15);
+  --blue-glow: rgba(37, 99, 235, 0.45);
+  --black: #020617;
+  --dark-card: #111827;
+  --border: rgba(255,255,255,0.08);
+  --text-light: #e5e7eb;
+  --text-muted: #9ca3af;
+}
+
+/* ===== BODY ===== */
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #020617;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: var(--text-light);
+}
+
+/* ===== PAGE WRAPPER ===== */
+.page-wrapper {
+  width: 100%;
+  max-width: 980px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* ===== HEADING ===== */
+h1 {
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+/* ===== FORM CARD ===== */
+.form-card {
+  width: 100%;
+  max-width: 640px;
+  background: var(--black);
+  border-radius: 16px;
+  padding: 22px;
+  border: 1px solid var(--border);
+  box-shadow: 0 25px 55px rgba(0,0,0,0.8);
+}
+
+.form-inner {
+  background: var(--dark-card);
+  padding: 18px;
+  border-radius: 14px;
+}
+
+/* ===== FIELDSET ===== */
+fieldset {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 16px;
+}
+
+legend {
+  padding: 0 10px;
+  color: #93c5fd;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* ===== FORM ELEMENTS ===== */
+label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 10px;
+  display: block;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--black);
+  color: var(--text-light);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 2px var(--blue-soft);
+}
+
+/* ===== SUBMIT BUTTON ===== */
+button[type="submit"] {
+  margin-top: 14px;
+  padding: 14px;
+  width: 100%;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  border: none;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 14px 30px var(--blue-glow);
+}
+
+/* ===== OVERLAY ===== */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.78);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.overlay.show {
+  display: flex;
+}
+
+/* ===== RESUME POPUP ===== */
+.resume-popup {
+  width: 100%;
+  max-width: 960px;
+  max-height: 90vh;
+  background: linear-gradient(180deg, #020617, #020617);
+  border-radius: 22px;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  overflow: hidden;
+  box-shadow: 0px 0px 50px 20px rgba(44, 55, 205, 0.9);
+  border: 1px solid white;
+}
+
+/* ===== LEFT COLUMN ===== */
+.r-left {
+  background: rgba(2,6,23,0.85);
+  border-right: 1px solid var(--border);
+  padding: 34px 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+/* ===== PROFILE PHOTO ===== */
+.profile-photo {
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px dashed var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.profile-photo img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* ===== RIGHT COLUMN ===== */
+.r-right {
+  padding: 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+}
+
+/* ===== SKILLS ===== */
+.skill-pill {
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: var(--blue-soft);
+  border: 1px solid rgba(37,99,235,0.3);
+  color: #93c5fd;
+  font-size: 0.8rem;
+  margin: 4px;
+  display: inline-block;
+}
+
+/* ===== EDUCATION / EXPERIENCE ===== */
+.edu-item,
+.exp-item {
+  background: #020617;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border-left: 4px solid var(--blue);
+  margin-top: 8px;
+}
+
+/* ===== ACTION BUTTONS (STYLISH) ===== */
+.popup-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
+/* COMMON BUTTON */
+.btn {
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+/* CLOSE */
+.btn.close {
+  background: rgba(255,255,255,0.06);
+  color: var(--text-light);
+}
+
+.btn.close:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+/* EDIT */
+.btn.secondary {
+  background: linear-gradient(135deg, #334155, #020617);
+  color: #e5e7eb;
+  border: 1px solid var(--border);
+}
+
+.btn.secondary:hover {
+  transform: translateY(-2px);
+}
+
+/* DOWNLOAD */
+.btn.primary {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #fff;
+  box-shadow: 0 14px 35px var(--blue-glow);
+}
+
+.btn.primary:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 20px 45px rgba(37,99,235,0.7);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 880px) {
+  .resume-popup {
+    grid-template-columns: 1fr;
+  }
+
+  .r-left {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .popup-actions {
+    flex-wrap: wrap;
+  }
+}

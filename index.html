@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resume Builder</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- PAGE WRAPPER (CENTERED CONTENT) -->
+  <div class="page-wrapper">
+
+    <h1>RESUME BUILDER</h1>
+
+    <!-- FORM CARD -->
+    <div class="form-card">
+      <div class="form-inner">
+        <form id="resume-form">
+
+          <fieldset>
+            <legend>PERSONAL INFORMATION</legend>
+
+            <label>Profile Photo</label>
+            <input type="file" id="photoInput" accept="image/*">
+
+            <label>Full Name</label>
+            <input id="name" type="text" placeholder="Enter your name" required>
+
+            <label>Date of Birth</label>
+            <input id="start" type="date">
+
+            <label>Email</label>
+            <input id="email" type="email" placeholder="you@example.com" required>
+
+            <label>Phone</label>
+            <input id="number" type="tel" placeholder="+92 3XX XXXXXXX" required>
+
+            <label>Nationality</label>
+            <input id="nationality" type="text">
+          </fieldset>
+
+          <fieldset>
+            <legend>EDUCATION</legend>
+            <textarea id="education" placeholder="Degree, University, Year" required></textarea>
+          </fieldset>
+
+          <fieldset>
+            <legend>SKILLS</legend>
+            <textarea id="skills" placeholder="Comma separated skills" required></textarea>
+          </fieldset>
+
+          <fieldset>
+            <legend>WORK EXPERIENCE</legend>
+            <textarea id="experience" placeholder="Job title, Company, Duration, Summary" required></textarea>
+          </fieldset>
+
+          <button type="submit" id="generateBtn">Generate Resume</button>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= POPUP OVERLAY ================= -->
+  <div class="overlay" id="overlay">
+    <div class="resume-popup" id="resumePopup">
+
+      <!-- LEFT -->
+      <div class="r-left">
+
+        <div class="profile-photo">
+          <img id="profilePreview">
+          <span id="photoPlaceholder">Upload Photo</span>
+        </div>
+
+        <div class="center-text">
+          <div id="rp-name" contenteditable="true">Full Name</div>
+          <div id="rp-role" contenteditable="true" class="muted-text">Your Role</div>
+        </div>
+
+        <div class="info-block">
+          <p><b>Phone:</b> <span id="rp-phone"></span></p>
+          <p><b>Email:</b> <span id="rp-email"></span></p>
+          <p><b>DOB:</b> <span id="rp-dob"></span></p>
+          <p><b>Nationality:</b> <span id="rp-nationality"></span></p>
+        </div>
+
+        <div class="info-block">
+          <b>Skills</b>
+          <div id="rp-skills"></div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="r-right">
+
+        <div class="popup-header">
+          <h3>Professional Resume</h3>
+        </div>
+
+        <div>
+          <b>Summary</b>
+          <div id="rp-summary" contenteditable="true">
+            Short professional summary goes here.
+          </div>
+        </div>
+
+        <div>
+          <b>Education</b>
+          <div id="rp-education" contenteditable="true"></div>
+        </div>
+
+        <div>
+          <b>Experience</b>
+          <div id="rp-experience" contenteditable="true"></div>
+        </div>
+
+        <!-- ACTION BUTTONS -->
+        <div class="popup-actions">
+          <button id="editBtn" class="btn secondary">Edit</button>
+          <button id="downloadPdfBtn" class="btn primary">Download PDF</button>
+          <button id="closePopup" class="btn secondary">Close</button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LIBRARIES -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+  <!-- JS -->
+  <script src="main.js"></script>
+
+</body>
+</html>
